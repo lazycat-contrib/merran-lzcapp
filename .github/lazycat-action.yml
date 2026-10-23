@@ -1,0 +1,43 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/merran.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: merran
+    bump: patch
+
+images:
+  - id: merran
+    target: service
+    service: merran
+    source: ghcr.io/merran-app/merran
+    # Alpha stage: the upstream next tag follows each published release
+    # (including alphas). Follow the mutable next tag with digest comparison
+    # and a patch bump per change; direct delivery with a digest-pinned
+    # manifest reference, as mutable mirror verification is unavailable.
+    channel: custom
+    sort: created
+    tag_regex: ^next$
+    delivery:
+      mode: direct
+
+stores:
+  official:
+    enabled: false
+    skip_if_version_exists: false
+    retry:
+      enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Merran 膳食管家
+    summary: 自动跟随上游 next 发布的家庭膳食规划应用，SQLite 存储

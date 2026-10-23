@@ -1,0 +1,25 @@
+application:
+  subdomain: merran
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://merran:3000/
+  injects:
+    # Recipe photo import and data export use native file pickers, which the
+    # store requires to route through the LazyCat cloud drive.
+    - id: open-save-chooser
+      on: browser
+      when:
+        - /*
+      do:
+        - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
+
+services:
+  merran:
+    # ghcr.io/merran-app/merran:next
+    image: ghcr.io/merran-app/merran@sha256:3082da01c0c5b04f0dacd10dba28ca4fbde6e6b57b7bd2927a17ed2a6ec83479
+    environment:
+      - TZ=Asia/Shanghai
+    binds:
+      - /lzcapp/var/data:/data

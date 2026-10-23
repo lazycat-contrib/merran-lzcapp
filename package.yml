@@ -1,0 +1,22 @@
+package: community.lazycat.app.merran
+version: 0.1.0
+name: Merran
+description: A self-hosted meal planner for households, recipes, weekly plans, shopping lists and pantry
+min_os_version: 1.5.0
+homepage: https://github.com/merran-app/merran
+author: merran-app
+license: AGPL-3.0
+locales:
+  zh:
+    name: Merran 膳食管家
+    description: 自托管家庭膳食规划，食谱、每周计划、购物清单与储藏管理，可选 AI 助手
+  zh_CN:
+    name: Merran 膳食管家
+    description: 自托管家庭膳食规划，食谱、每周计划、购物清单与储藏管理，可选 AI 助手
+  en:
+    name: Merran
+    description: A self-hosted meal planner for households, recipes, weekly plans, shopping lists and pantry
+unsupported_platforms:
+  - ios
+  - android
+  - tvos
