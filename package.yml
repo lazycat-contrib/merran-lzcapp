@@ -1,5 +1,5 @@
 package: community.lazycat.app.merran
-version: 0.1.0
+version: 0.1.1
 name: Merran
 description: A self-hosted meal planner for households, recipes, weekly plans, shopping lists and pantry
 min_os_version: 1.5.0
