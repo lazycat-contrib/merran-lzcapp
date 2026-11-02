@@ -17,8 +17,8 @@ application:
 services:
   merran:
     # ghcr.io/merran-app/merran:next
-    # upstream: ghcr.io/merran-app/merran:next@sha256:53b32f2835a3f7aaa4739dda8484bb209a9809fb8238ced9bac8969f5b7cf8f9
-    image: ghcr.io/merran-app/merran:next@sha256:53b32f2835a3f7aaa4739dda8484bb209a9809fb8238ced9bac8969f5b7cf8f9
+    # upstream: ghcr.io/merran-app/merran:next@sha256:27094c20dd8144b4861340d3afb70e6c0595cb50418f3b9b0e77e37762160b94
+    image: ghcr.io/merran-app/merran:next@sha256:27094c20dd8144b4861340d3afb70e6c0595cb50418f3b9b0e77e37762160b94
     environment:
       - TZ=Asia/Shanghai
     binds:
